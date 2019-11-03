@@ -18,6 +18,32 @@
 * Simple, Easy, Fast to use
 
 <!-- INSTALLATION HEADER -->
+## → Run Instructions
+
+* If your your on windows simply double tap the exe file.
+
+———————————————————————————————————————————————————
+
+* For Linux users **Make Sure** you allow the file to executiable. Usally you can hit the properties tab on the file and allow it to be executiable.
+
+* Then run the file in the terminal: `./pycrossclicker_Linux_or_Mac`
+
+———————————————————————————————————————————————————
+
+* Mac users can run the Linux Binary file using [**Noah**](https://github.com/linux-noah/noah).
+
+```markdown
+brew install linux-noah/noah/noah
+
+noah
+<!-- Entering the Linux Subsystem Using Noah -->
+
+./pycrossclicker_Linux_or_Mac
+<!-- Run the file -->
+```
+
+
+<!-- INSTALLATION HEADER -->
 ## → Installation Instructions
 
 * You can run the provided exe or binary application for your operating system, or you may install the dependences needed and run this application with python.
