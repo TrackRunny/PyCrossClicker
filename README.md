@@ -40,6 +40,9 @@ noah
 
 ./pycrossclicker_Linux_or_Mac
 <!-- Run the file -->
+
+exit
+<!-- When your done, exit the Subsystem -->
 ```
 
 
