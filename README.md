@@ -85,3 +85,9 @@ python3 pycrossclicker.py
 ## → License
 
 * This project is licensed under the GPLv3.
+
+<!-- END OF README -->
+## → Questions / Contact me
+
+* Discord Account: `TrackRunny#0001`
+* Email: `trackrunny@protonmail.com`
