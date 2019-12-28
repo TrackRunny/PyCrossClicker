@@ -24,7 +24,7 @@
 
 ———————————————————————————————————————————————————
 
-* For Linux users **Make Sure** you allow the file to executiable. Usally you can hit the properties tab on the file and allow it to be executiable.
+* For Linux users **Make Sure** you allow the file to executable. Usually you can hit the properties tab on the file and allow it to be executable.
 
 * Then run the file in the terminal: `./pycrossclicker_Linux_or_Mac`
 
@@ -49,7 +49,7 @@ exit
 <!-- INSTALLATION HEADER -->
 ## → Installation Instructions
 
-* You can run the provided exe or binary application for your operating system, or you may install the dependences needed and run this application with python.
+* You can run the provided exe or binary application for your operating system, or you may install the dependence's needed and run this application with python.
 
 ```markdown
 pip install pynput
@@ -57,7 +57,7 @@ pip install pynput
 
 or
 
-pip3 instlal pynput
+pip3 install pynput
 <!-- Remember: Use this if you have two versions of python and / or you have python 2 and python 3. -->
 ```
 
