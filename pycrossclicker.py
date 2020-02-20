@@ -1,6 +1,10 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # PyCrossClicker - Fully customizable python console application            #
+<<<<<<< HEAD
 # Copyright (C) 2019-2020 TrackRunny                                        #
+=======
+# Copyright (C) 2019 TrackRunny                                             #
+>>>>>>> 05e89ed7b85e17b318067ec50056716a2d43af85
 #                                                                           #
 # This program is free software: you can redistribute it and/or modify      #
 # it under the terms of the GNU General Public License as published by      #
@@ -16,8 +20,6 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.     #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-import os
-import sys
 import threading
 import time
 
