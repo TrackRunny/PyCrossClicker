@@ -1,31 +1,48 @@
-"""
-PyCrossClicker - Fully customizable python console application
-Copyright (C) 2019 TrackRunny
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# PyCrossClicker - Fully customizable python console application            #
+# Copyright (C) 2019-2020 TrackRunny                                        #
+#                                                                           #
+# This program is free software: you can redistribute it and/or modify      #
+# it under the terms of the GNU General Public License as published by      #
+# the Free Software Foundation, either version 3 of the License, or         #
+# (at your option) any later version.                                       #
+#                                                                           #
+# This program is distributed in the hope that it will be useful,           #
+# but WITHOUT ANY WARRANTY; without even the implied warranty of            #
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             #
+# GNU General Public License for more details.                              #
+#                                                                           #
+# You should have received a copy of the GNU General Public License         #
+# along with this program. If not, see <https://www.gnu.org/licenses/>.     #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program. If not, see <https://www.gnu.org/licenses/>.
-"""
-
-import time
-import threading
-from pynput.mouse import Button, Controller
-from pynput.keyboard import Listener, KeyCode
 import os
+import sys
+import threading
+import time
+
+from pynput.keyboard import Listener, KeyCode
+from pynput.mouse import Button, Controller
 
 divider = "————————————————————————————————————————————————————————"
 
+print("""                                                   
+
+ ___           ___                            ___    _              _                  
+(  _`\        (  _`\                         (  _`\ (_ )  _        ( )                 
+| |_) ) _   _ | ( (_) _ __   _     ___   ___ | ( (_) | | (_)   ___ | |/')    __   _ __ 
+| ,__/'( ) ( )| |  _ ( '__)/'_`\ /',__)/',__)| |  _  | | | | /'___)| , <   /'__`\( '__)
+| |    | (_) || (_( )| |  ( (_) )\__, \\__, \| (_( ) | | | |( (___ | |\`\ (  ___/| |   
+(_)    `\__, |(____/'(_)  `\___/'(____/(____/(____/'(___)(_)`\____)(_) (_)`\____)(_)   
+       ( )_| |                                                                         
+       `\___/'                                                                         
+
+""")
+
+print(divider)
+
 try:
-    clicks = float(input("Delay speed: (Default: 0.060 Seconds ~ 15 Clicks Per Second): "))
+    clicks = float(input("• Delay speed: (Default: 0.060 Seconds ~ 15 Clicks Per Second): "))
     delay = clicks
 except ValueError:
     clicks = 0.060
@@ -37,7 +54,7 @@ print(divider)
 # ———————————————————————————————————————————————————————
 # ———————————————————————————————————————————————————————
 
-input_start_and_stop_key = str(input("Start And Stop Key: (Default: x): "))
+input_start_and_stop_key = str(input("• Start And Stop Key: (Default: x): "))
 start_stop_key = KeyCode(char=input_start_and_stop_key)
 
 if input_start_and_stop_key == "":
@@ -49,7 +66,7 @@ print(divider)
 # ———————————————————————————————————————————————————————
 # ———————————————————————————————————————————————————————
 
-input_exit_key = str(input("Exit Key: (Default: `): "))
+input_exit_key = str(input("• Exit Key: (Default: `): "))
 exit_key = KeyCode(char=input_exit_key)
 
 if input_exit_key == "":
@@ -61,8 +78,9 @@ print(divider)
 # ———————————————————————————————————————————————————————
 # ———————————————————————————————————————————————————————
 
-input_button = str(input("Options: Left, Right, Middle"
+input_button = str(input("• Options: Left, Right, Middle"
                          "\nMouse button: (Default: Left Mouse Button): "))
+
 input_button = input_button.lower()
 button = Button.left
 
@@ -106,6 +124,12 @@ class ClickMouse(threading.Thread):
             time.sleep(0.1)
 
 
+def check_os():
+    if sys.platform == "darwin" or "linux":
+        os.system("clear")
+    else:
+        os.system("cls")
+
 # ———————————————————————————————————————————————————————
 # ———————————————————————————————————————————————————————
 # ———————————————————————————————————————————————————————
@@ -116,7 +140,11 @@ click_thread = ClickMouse(delay, button)
 click_thread.start()
 
 
-print("Clicker is ready!")
+print("• Clicker is ready!")
+check_os()
+
+print("• Clicking has stopped!")
+print(divider)
 
 # ———————————————————————————————————————————————————————
 # ———————————————————————————————————————————————————————
@@ -127,13 +155,17 @@ def on_press(key):
     if key == start_stop_key:
         if click_thread.running:
             click_thread.stop_clicking()
-            os.system("clear")
-            print("Clicking as stopped!")
+
+            check_os()
+
+            print("• Clicking has stopped!")
             print(divider)
         else:
             click_thread.start_clicking()
-            os.system("clear")
-            print("Clicking as started!")
+
+            check_os()
+
+            print("• Clicking has started!")
             print(divider)
     elif key == exit_key:
         click_thread.exit()
