@@ -125,10 +125,10 @@ class ClickMouse(threading.Thread):
 
 
 def check_os():
-    if sys.platform == "darwin" or "linux":
-        os.system("clear")
-    else:
+    if sys.platform == "win32":
         os.system("cls")
+    else:
+        os.system("clear")
 
 # ———————————————————————————————————————————————————————
 # ———————————————————————————————————————————————————————
