@@ -89,4 +89,4 @@ python3 pycrossclicker.py
 <!-- END OF README -->
 ## → Questions / Contact me
 
-* Discord Account: `TrackRunny#0001`
+* Discord Account: `TrackRunny#2503`
